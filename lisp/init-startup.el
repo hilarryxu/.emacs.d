@@ -7,7 +7,6 @@
 
 ;; package
 (setq package-archives '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("marmalade" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
 (package-initialize)
@@ -32,5 +31,9 @@
 (auto-save-enable)
 (setq auto-save-silent t)
 (setq auto-save-delete-trailing-whitespace t)
+
+(setq-default mode-line-format nil)
+(require 'awesome-tray)
+(awesome-tray-mode 1)
 
 (provide 'init-startup)
