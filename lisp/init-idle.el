@@ -6,6 +6,9 @@
   (xah-fly-keys-set-layout "qwerty")
   (xah-fly-keys 1))
 
+(use-package xah-find
+  :ensure t)
+
 (use-package ido
   :ensure t
   :config
