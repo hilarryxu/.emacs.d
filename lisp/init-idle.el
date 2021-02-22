@@ -9,6 +9,9 @@
 (use-package xah-find
   :ensure t)
 
+(use-package lusty-explorer
+  :ensure t)
+
 (use-package ido
   :ensure t
   :config
@@ -29,18 +32,15 @@
   (which-key-mode 1)
   (diminish 'which-key-mode))
 
-(use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode 1))
+; (use-package yasnippet
+;   :ensure t
+;   :config
+;   (yas-global-mode 1))
 
 (use-package company
   :ensure t
   :init
   (global-company-mode)
   (diminish 'company-mode "CMP"))
-
-(use-package lusty-explorer
-  :ensure t)
 
 (provide 'init-idle)

@@ -10,8 +10,11 @@
     (custom-set-faces
      '(default ((t (:background "#3F3F3F" :foreground "#DCDCCC")))))
 
+    (require 'init-early-init)
+    (require 'init-elpa)
     (require 'init-startup)
     (require 'init-theme)
+    (require 'init-ui)
     (require 'lazy-load)
     (require 'init-keymaps)
 
