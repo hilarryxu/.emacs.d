@@ -1,0 +1,17 @@
+*.elc
+*.eld
+.session
+.emacs.desktop*
+.smex*
+elpa/
+auto-save-list/
+eshell/
+server/
+recentf
+ido.last
+custom.el
+session.*
+
+/history
+/irony/
+/semanticdb/
