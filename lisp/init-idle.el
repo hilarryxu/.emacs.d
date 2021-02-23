@@ -9,9 +9,6 @@
 (use-package xah-find
   :ensure t)
 
-(use-package lusty-explorer
-  :ensure t)
-
 (use-package ido
   :ensure t
   :config
