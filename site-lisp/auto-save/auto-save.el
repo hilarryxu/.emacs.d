@@ -92,7 +92,6 @@
 
 ;;; Require
 
-
 ;;; Code:
 
 (defgroup auto-save nil
@@ -116,8 +115,12 @@ avoid delete current indent space when you programming."
   :type 'boolean
   :group 'auto-save)
 
+(defvar auto-save-disable-predicates
+  nil "disable auto save in these case.")
+
 ;; Emacs' default auto-save is stupid to generate #foo# files!
 (setq auto-save-default nil)
+(setq create-lockfiles nil)
 
 (defun auto-save-buffers ()
   (interactive)
@@ -136,7 +139,11 @@ avoid delete current indent space when you programming."
                      (not yas--active-snippets))
                  ;; Company is not active?
                  (or (not (boundp 'company-candidates))
-                     (not company-candidates)))
+                     (not company-candidates))
+                 ;; tell auto-save don't save
+                 (not (seq-some (lambda (predicate)
+                                  (funcall predicate))
+                                auto-save-disable-predicates)))
             (push (buffer-name) autosave-buffer-list)
             (if auto-save-silent
                 ;; `inhibit-message' can shut up Emacs, but we want
@@ -173,11 +180,32 @@ avoid delete current indent space when you programming."
             (narrow-to-region (1+ end) (point-max))
             (delete-trailing-whitespace)))))))
 
+(defvar auto-save-timer nil)
+
+(defun auto-save-set-timer ()
+  "Set the auto-save timer.
+Cancel any previous timer."
+  (auto-save-cancel-timer)
+  (setq auto-save-timer
+        (run-with-idle-timer auto-save-idle t 'auto-save-buffers)))
+
+(defun auto-save-cancel-timer ()
+  (when auto-save-timer
+    (cancel-timer auto-save-timer)
+    (setq auto-save-timer nil)))
+
 (defun auto-save-enable ()
   (interactive)
-  (run-with-idle-timer auto-save-idle t #'auto-save-buffers)
+  (auto-save-set-timer)
   (add-hook 'before-save-hook 'auto-save-delete-trailing-whitespace-except-current-line)
   (add-hook 'before-save-hook 'font-lock-flush)
+  )
+
+(defun auto-save-disable ()
+  (interactive)
+  (auto-save-cancel-timer)
+  (remove-hook 'before-save-hook 'auto-save-delete-trailing-whitespace-except-current-line)
+  (remove-hook 'before-save-hook 'font-lock-flush)
   )
 
 (provide 'auto-save)
