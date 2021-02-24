@@ -3,6 +3,7 @@
 .session
 .emacs.desktop*
 .smex*
+.amx-items
 elpa/
 auto-save-list/
 eshell/

@@ -19,9 +19,9 @@
 
 (lazy-load-global-keys
   '(
-    ("M-x" . smex)
+    ("M-x" . amx)
     ("C-c C-c M-x" . execute-extended-command)
   )
-  "lazy-load-smex")
+  "lazy-load-amx")
 
 (provide 'init-keymaps)

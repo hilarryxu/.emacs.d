@@ -4,7 +4,8 @@
   (setq xah-fly-use-control-key nil)
   :config
   (xah-fly-keys-set-layout "qwerty")
-  (xah-fly-keys 1))
+  (xah-fly-keys 1)
+  (setq xah-fly-M-x-command 'amx))
 
 (use-package xah-find
   :ensure t)
@@ -16,9 +17,22 @@
   (setq ido-enable-flex-matching t)
   (setq ido-everywhere nil)
 
+  (use-package ido-completing-read+
+    :ensure t)
+
   (use-package ido-vertical-mode
     :ensure t
     :config
+    (setq ido-vertical-show-count t)
+    (setq ido-use-faces t)
+    (set-face-attribute 'ido-vertical-first-match-face nil
+                        :background nil
+                        :foreground "orange")
+    (set-face-attribute 'ido-vertical-only-match-face nil
+                        :background nil
+                        :foreground nil)
+    (set-face-attribute 'ido-vertical-match-face nil
+                        :foreground nil)
     (ido-vertical-mode 1)
     (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 )
