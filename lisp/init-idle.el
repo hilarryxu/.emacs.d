@@ -37,21 +37,21 @@
     (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 )
 
-(use-package which-key
-  :ensure t
-  :init
-  (which-key-mode 1)
-  (diminish 'which-key-mode))
+; (use-package which-key
+;   :ensure t
+;   :init
+;   (which-key-mode 1)
+;   (diminish 'which-key-mode))
 
 ; (use-package yasnippet
 ;   :ensure t
 ;   :config
 ;   (yas-global-mode 1))
 
-(use-package company
-  :ensure t
-  :init
-  (global-company-mode)
-  (diminish 'company-mode "CMP"))
+; (use-package company
+;   :ensure t
+;   :init
+;   (global-company-mode)
+;   (diminish 'company-mode "CMP"))
 
 (provide 'init-idle)

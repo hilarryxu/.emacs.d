@@ -7,13 +7,13 @@
   ;; 抹掉插件启动的输出
   (with-temp-message ""
     ;; 先设置背景，避免闪烁
-    (custom-set-faces
-     '(default ((t (:background "#3F3F3F" :foreground "#DCDCCC")))))
+    ; (custom-set-faces
+    ;  '(default ((t (:background "#3F3F3F" :foreground "#DCDCCC")))))
 
     (require 'init-early-init)
     (require 'init-elpa)
     (require 'init-startup)
-    (require 'init-theme)
+    ; (require 'init-theme)
     (require 'init-ui)
     (require 'lazy-load)
     (require 'init-keymaps)
