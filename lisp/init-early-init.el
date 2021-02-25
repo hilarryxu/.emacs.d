@@ -11,9 +11,11 @@
 (setq inhibit-startup-echo-area-message t)
 
 ;; 设置中文字体
-(set-face-attribute 'default nil :font "Consolas 12")
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font)
-                    charset (font-spec :family "Microsoft Yahei" :size 14)))
+(if (display-graphic-p)
+    (progn
+      (set-face-attribute 'default nil :font "Consolas 12")
+      (dolist (charset '(kana han symbol cjk-misc bopomofo))
+	(set-fontset-font (frame-parameter nil 'font)
+			  charset (font-spec :family "Microsoft Yahei" :size 14)))))
 
 (provide 'init-early-init)

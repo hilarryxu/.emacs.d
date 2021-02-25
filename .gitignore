@@ -14,6 +14,8 @@ custom.el
 session.*
 
 /history
+/bookmarks
+
 /irony/
 /semanticdb/
 /themes/
