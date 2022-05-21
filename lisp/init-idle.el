@@ -1,14 +1,20 @@
-(use-package xah-fly-keys
-  :ensure t
-  :init
-  (setq xah-fly-use-control-key nil)
-  :config
-  (xah-fly-keys-set-layout "qwerty")
-  (xah-fly-keys 1)
-  (setq xah-fly-M-x-command 'amx))
+; (use-package xah-fly-keys
+;   :ensure t
+;   :init
+;   (setq xah-fly-use-control-key nil)
+;   :config
+;   (xah-fly-keys-set-layout "qwerty")
+;   (xah-fly-keys 1)
+;   (setq xah-fly-M-x-command 'amx))
 
-(use-package xah-find
-  :ensure t)
+(require 'xah-fly-keys)
+(setq xah-fly-use-control-key nil)
+(setq xah-fly-M-x-command 'amx)
+(xah-fly-keys-set-layout "qwerty")
+(xah-fly-keys 1)
+
+; (use-package xah-find
+;   :ensure t)
 
 (use-package ido
   :ensure t
