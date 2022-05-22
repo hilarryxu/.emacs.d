@@ -13,8 +13,7 @@
 (xah-fly-keys-set-layout "qwerty")
 (xah-fly-keys 1)
 
-; (use-package xah-find
-;   :ensure t)
+(require 'xah-find)
 
 (use-package ido
   :ensure t
@@ -43,21 +42,24 @@
     (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 )
 
-; (use-package which-key
-;   :ensure t
-;   :init
-;   (which-key-mode 1)
-;   (diminish 'which-key-mode))
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode 1)
+  (diminish 'which-key-mode))
 
-; (use-package yasnippet
-;   :ensure t
-;   :config
-;   (yas-global-mode 1))
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
 
-; (use-package company
-;   :ensure t
-;   :init
-;   (global-company-mode)
-;   (diminish 'company-mode "CMP"))
+(use-package company
+  :ensure t
+  :init
+  (global-company-mode)
+  (diminish 'company-mode "CMP"))
+
+; (use-package ace-window
+;   :bind ("C-x o" . ace-window))
 
 (provide 'init-idle)

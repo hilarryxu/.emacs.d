@@ -10,8 +10,8 @@
 (eval-when-compile
   (require 'use-package))
 
-; (use-package diminish
-;   :ensure t)
+(use-package diminish
+  :ensure t)
 
 (use-package bind-key
   :ensure t)
