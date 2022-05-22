@@ -17,11 +17,11 @@
     ("C-x I" . ido-insert-file)             ; 插入文件
     ))
 
-(lazy-load-global-keys
-  '(
-    ("M-x" . amx)
-    ("C-c C-c M-x" . execute-extended-command)
-  )
-  "lazy-load-amx")
+; (lazy-load-global-keys
+;   '(
+;     ("M-x" . amx)
+;     ("C-c C-c M-x" . execute-extended-command)
+;   )
+;   "lazy-load-amx")
 
 (provide 'init-keymaps)
