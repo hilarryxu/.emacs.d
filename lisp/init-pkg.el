@@ -9,4 +9,6 @@
   :custom
   (bookmark-fontify nil))
 
+(require 'find-file-rg)
+
 (provide 'init-pkg)

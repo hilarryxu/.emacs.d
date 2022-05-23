@@ -13,6 +13,7 @@
   '(
     ("C-x i" . ido-insert-buffer)           ; 插入缓存
     ("C-x I" . ido-insert-file)             ; 插入文件
+    ("C-c f" . find-file-rg)                ; rg --files
     ))
 
 (provide 'init-keymaps)
