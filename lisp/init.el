@@ -14,6 +14,7 @@
     (require 'init-early-init)
     (require 'init-elpa)
     (require 'init-startup)
+    (require 'init-pkg)
     ; (require 'init-theme)
     (require 'init-ui)
     (require 'lazy-load)
